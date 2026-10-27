@@ -1,9 +1,22 @@
-=== CURRENT HOST ===
+=== HOST IDENTIFICATION ===
+2026-10-27T07:35:14+00:00
 server
 oliver_e
+
+=== INTERFACES ===
 lo               UNKNOWN        127.0.0.1/8 ::1/128 
 enp0s3           UP             10.0.2.15/24 metric 100 fd17:625c:f037:2:a00:27ff:fed1:af77/64 fe80::a00:27ff:fed1:af77/64 
 
-Role of this host has not yet been confirmed.
-Do not interpret its snapshot as the target VM's after-state
-until the router/target distinction has been verified.
+=== ROUTES ===
+default via 10.0.2.2 dev enp0s3 proto dhcp src 10.0.2.15 metric 100 
+10.0.2.0/24 dev enp0s3 proto kernel scope link src 10.0.2.15 metric 100 
+10.0.2.2 dev enp0s3 proto dhcp scope link src 10.0.2.15 metric 100 
+192.168.253.11 via 10.0.2.2 dev enp0s3 proto dhcp src 10.0.2.15 metric 100 
+192.168.253.12 via 10.0.2.2 dev enp0s3 proto dhcp src 10.0.2.15 metric 100 
+
+=== LISTENING PORTS ===
+State  Recv-Q Send-Q Local Address:Port Peer Address:PortProcess                                                 
+LISTEN 0      4096   127.0.0.53%lo:53        0.0.0.0:*    users:(("systemd-resolve",pid=650,fd=17))              
+LISTEN 0      4096      127.0.0.54:53        0.0.0.0:*    users:(("systemd-resolve",pid=650,fd=19))              
+LISTEN 0      4096         0.0.0.0:22        0.0.0.0:*    users:(("sshd",pid=1550,fd=3),("systemd",pid=1,fd=239))
+LISTEN 0      4096            [::]:22           [::]:*    users:(("sshd",pid=1550,fd=4),("systemd",pid=1,fd=240))
