@@ -1,17 +1,25 @@
 # Verification Summary
 
-| Requirement | Evidence | Status |
+| Requirement | Evidence file | Expected result |
 |---|---|---|
-| Baseline snapshot | normal-vm/before.txt | Captured if file exists |
-| Post-hardening snapshot | normal-vm/after.txt | Pending |
-| Diff | normal-vm/diff.txt | Pending |
-| Account audit | normal-vm/account-audit.txt | Collected |
-| Package changes | normal-vm/removed-packages.txt | Collected if available |
-| SSH settings | normal-vm/sshd-effective.txt | Collected |
-| SSH validation | normal-vm/ssh-validation.txt | Collected |
-| ProxyJump | client/config.example | Configuration template |
-| Update logs | normal-vm/update-logs.txt | Collected if available |
-| Nmap | router/nmap-after.txt | Pending target identification |
-| Password authentication test | client/password-auth-test.txt | Pending |
+| Baseline snapshot | `normal-vm/before.txt` | Listening ports, running services, package count, SUID files |
+| Final snapshot | `normal-vm/after.txt` | System state after hardening |
+| Comparison | `normal-vm/diff.txt` | Differences between baseline and final state |
+| Account audit | `normal-vm/account-audit.txt` | Account IDs, shells, password status, login history |
+| SSH configuration | `normal-vm/sshd-effective.txt` | Effective SSH daemon settings |
+| SSH validation | `normal-vm/ssh-validation.txt` | Configuration syntax check |
+| ProxyJump | `client/config.example` | Router-based SSH access configuration |
+| Update logs | `normal-vm/update-logs.txt` | Automatic update execution records |
+| Port scan | `router/nmap-after.txt` | Services detected on the target |
+| Authentication test | `client/password-auth-test.txt` | Password authentication rejected when disabled |
 
-Mark a test successful only after its output confirms success.
+## Interpretation
+
+A reduced listening-port list may indicate a smaller network attack surface.
+Package counts and service lists provide additional context.
+
+SSH syntax validation confirms that the configuration parses. A separate
+connection test is required to verify authentication and ProxyJump.
+
+Update logs should establish whether updates were installed or no eligible
+updates were available.
