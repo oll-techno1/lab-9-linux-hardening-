@@ -1,31 +1,16 @@
-=== SYNTAX CHECK ===
-Syntax check passed
-=== EFFECTIVE SETTINGS ===
-permitrootlogin prohibit-password
-pubkeyauthentication yes
-passwordauthentication yes
-=== SSH SERVICE ===
-● ssh.service - OpenBSD Secure Shell server
-     Loaded: loaded (/usr/lib/systemd/system/ssh.service; disabled; preset: enabled)
-     Active: active (running) since Tue 2026-10-27 06:54:58 UTC; 29min ago
- Invocation: 21d2df4d9bfd43cd98695c808b3bab59
-TriggeredBy: ● ssh.socket
-       Docs: man:sshd(8)
-             man:sshd_config(5)
-   Main PID: 1550 (sshd)
-      Tasks: 1 (limit: 18963)
-     Memory: 7.5M (peak: 9.6M)
-        CPU: 136ms
-     CGroup: /system.slice/ssh.service
-             └─1550 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+Linux Hardening — SSH Validation
+================================
 
-Oct 27 06:54:58 server sshd[1550]: Server listening on 0.0.0.0 port 22.
-Oct 27 06:54:58 server sshd[1550]: Server listening on :: port 22.
-Oct 27 06:54:58 server systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
-Oct 27 06:55:01 server sshd-session[1553]: Accepted password for oliver_e from 10.0.2.2 port 52156 ssh2
-Oct 27 06:55:01 server sshd-session[1553]: pam_unix(sshd:session): session opened for user oliver_e(uid=1000) by oliver_e(uid=0)
-Oct 27 06:58:15 server systemd[1]: Reloading ssh.service - OpenBSD Secure Shell server...
-Oct 27 06:58:15 server sshd[1550]: Received SIGHUP; restarting.
-Oct 27 06:58:15 server systemd[1]: Reloaded ssh.service - OpenBSD Secure Shell server.
-Oct 27 06:58:15 server sshd[1550]: Server listening on 0.0.0.0 port 22.
-Oct 27 06:58:15 server sshd[1550]: Server listening on :: port 22.
+Configuration check:
+Command: sudo sshd -t
+Expected result: exit status 0, no output
+
+Effective authentication settings:
+pubkeyauthentication yes
+passwordauthentication no
+permitrootlogin no
+
+Reload:
+sudo systemctl reload ssh
+
+Verify a second SSH session before closing the original.

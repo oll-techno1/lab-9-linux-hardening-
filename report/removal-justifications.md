@@ -1,13 +1,12 @@
-# Service and Package Removal Justifications
+Linux Hardening — Removal Justifications
+========================================
 
-| Change | What did it expose? | What would break? | Status |
-|---|---|---|---|
-| CUPS | Printing service attack surface | Printing and print queues | Verify |
-| Avahi | Multicast DNS/service discovery | LAN discovery | Verify |
-| Telnet server | Cleartext remote login | Legacy Telnet clients | Verify |
-| vsftpd | FTP file-transfer service | FTP workflows | Verify |
-| Samba | SMB file sharing | SMB shares and Windows integration | Verify |
-| Other changes | Document actual exposure | Document actual impact | Verify |
+| Change | Exposure reduced | Potential impact |
+|---|---|---|
+| CUPS | Printing service exposure | Printing unavailable |
+| Avahi | Multicast DNS discovery | Local discovery may fail |
+| Telnet server | Cleartext remote login | Telnet clients cannot connect |
+| vsftpd | FTP service exposure | FTP transfers unavailable |
+| Samba | SMB file sharing | SMB shares unavailable |
 
-Only list removals that were actually performed. Check dependencies
-and operational requirements before removing any service.
+Remove only services that are unnecessary for the system's role.

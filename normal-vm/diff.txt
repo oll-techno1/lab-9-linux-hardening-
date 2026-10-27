@@ -1,0 +1,21 @@
+Linux Hardening — Before/After Comparison
+=========================================
+
+Removed listening services:
+- FTP (21/tcp)
+- NetBIOS (139/tcp)
+- SMB (445/tcp)
+- IPP printing (631/tcp)
+
+Installed package count:
+Before: 1850
+After:  1765
+Change: -85 packages
+
+Services no longer running:
+- vsftpd.service
+- smbd.service
+- cups.service
+- avahi-daemon.service
+
+SSH remains available on TCP port 22.

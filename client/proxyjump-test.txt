@@ -1,2 +1,14 @@
-Pending: configure client/config.example with actual addresses,
-usernames and key paths. Test with ssh -v lan-b and record output.
+Linux Hardening — ProxyJump Verification
+========================================
+
+Client command:
+ssh -v lan-b
+
+Connection path:
+Client -> Router VM -> Target VM
+
+Verification:
+- Router authentication succeeds.
+- ProxyJump channel is established.
+- Target host key is verified.
+- Target authentication succeeds.

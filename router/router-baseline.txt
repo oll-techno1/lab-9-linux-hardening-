@@ -1,40 +1,17 @@
-2026-10-27T07:24:18+00:00
-server
-lo               UNKNOWN        127.0.0.1/8 ::1/128 
-enp0s3           UP             10.0.2.15/24 metric 100 fd17:625c:f037:2:a00:27ff:fed1:af77/64 fe80::a00:27ff:fed1:af77/64 
-default via 10.0.2.2 dev enp0s3 proto dhcp src 10.0.2.15 metric 100 
-10.0.2.0/24 dev enp0s3 proto kernel scope link src 10.0.2.15 metric 100 
-10.0.2.2 dev enp0s3 proto dhcp scope link src 10.0.2.15 metric 100 
-192.168.253.11 via 10.0.2.2 dev enp0s3 proto dhcp src 10.0.2.15 metric 100 
-192.168.253.12 via 10.0.2.2 dev enp0s3 proto dhcp src 10.0.2.15 metric 100 
-State  Recv-Q Send-Q Local Address:Port Peer Address:PortProcess
-LISTEN 0      4096   127.0.0.53%lo:53        0.0.0.0:*          
-LISTEN 0      4096      127.0.0.54:53        0.0.0.0:*          
-LISTEN 0      4096         0.0.0.0:22        0.0.0.0:*          
-LISTEN 0      4096            [::]:22           [::]:*          
-  UNIT                        LOAD   ACTIVE SUB     DESCRIPTION
-  chrony.service              loaded active running chrony, an NTP client/server
-  cron.service                loaded active running Regular background program processing daemon
-  dbus.service                loaded active running D-Bus System Message Bus
-  getty@tty1.service          loaded active running Getty on tty1
-  ModemManager.service        loaded active running Modem Manager
-  multipathd.service          loaded active running Device-Mapper Multipath Device Controller
-  networkd-dispatcher.service loaded active running Dispatcher daemon for systemd-networkd
-  polkit.service              loaded active running Authorization Manager
-  rsyslog.service             loaded active running System Logging Service
-  snapd.service               loaded active running Snap Daemon
-  ssh.service                 loaded active running OpenBSD Secure Shell server
-  systemd-journald.service    loaded active running Journal Service
-  systemd-logind.service      loaded active running User Login Management
-  systemd-networkd.service    loaded active running Network Management
-  systemd-resolved.service    loaded active running Network Name Resolution
-  systemd-udevd.service       loaded active running Rule-based Manager for Device Events and Files
-  udisks2.service             loaded active running Disk Manager
-  unattended-upgrades.service loaded active running Unattended Upgrades Shutdown
-  user@1000.service           loaded active running User Manager for UID 1000
+Linux Hardening — Router Baseline
+=================================
 
-Legend: LOAD   → Reflects whether the unit definition was properly loaded.
-        ACTIVE → The high-level unit activation state, i.e. generalization of SUB.
-        SUB    → The low-level unit activation state, values depend on unit type.
+Hostname: server
 
-19 loaded units listed.
+Interfaces:
+enp0s3   10.0.2.15/24
+enp0s8   10.10.10.1/24
+enp0s9   10.10.20.1/24
+enp0s10  192.168.56.102/24
+
+LAN networks:
+10.10.10.0/24
+10.10.20.0/24
+
+SSH service:
+TCP port 22

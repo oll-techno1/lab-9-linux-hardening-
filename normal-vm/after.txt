@@ -1,0 +1,30 @@
+Linux Hardening — Final Snapshot
+================================
+
+Hostname: ubuntu-target
+Date: 2026-10-27
+
+Listening Ports
+---------------
+PORT     SERVICE
+22/tcp   ssh
+
+Running Services
+----------------
+ssh.service
+systemd-resolved.service
+systemd-networkd.service
+
+Installed Packages
+------------------
+1765
+
+SUID Binaries
+-------------
+/usr/bin/sudo
+/usr/bin/passwd
+/usr/bin/chsh
+/usr/bin/chfn
+/usr/bin/gpasswd
+/usr/bin/mount
+/usr/bin/umount
