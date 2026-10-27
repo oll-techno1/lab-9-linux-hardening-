@@ -1,0 +1,9 @@
+=== CURRENT HOST ===
+server
+oliver_e
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+enp0s3           UP             10.0.2.15/24 metric 100 fd17:625c:f037:2:a00:27ff:fed1:af77/64 fe80::a00:27ff:fed1:af77/64 
+
+Role of this host has not yet been confirmed.
+Do not interpret its snapshot as the target VM's after-state
+until the router/target distinction has been verified.

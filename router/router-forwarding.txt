@@ -1,0 +1,9 @@
+net.ipv4.ip_forward = 0
+default via 10.0.2.2 dev enp0s3 proto dhcp src 10.0.2.15 metric 100 
+10.0.2.0/24 dev enp0s3 proto kernel scope link src 10.0.2.15 metric 100 
+10.0.2.2 dev enp0s3 proto dhcp scope link src 10.0.2.15 metric 100 
+192.168.253.11 via 10.0.2.2 dev enp0s3 proto dhcp src 10.0.2.15 metric 100 
+192.168.253.12 via 10.0.2.2 dev enp0s3 proto dhcp src 10.0.2.15 metric 100 
+10.0.2.2 dev enp0s3 lladdr 52:54:00:12:35:00 REACHABLE 
+fe80::2 dev enp0s3 lladdr 52:54:00:12:35:00 router STALE 
+fd17:625c:f037:2::2 dev enp0s3 lladdr 52:54:00:12:35:00 router STALE 

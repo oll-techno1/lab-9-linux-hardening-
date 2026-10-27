@@ -1,0 +1,3 @@
+Pending: identify the actual target VM IP, then run from the router:
+sudo nmap -sV <TARGET_LAN_IP>
+Save the real scan output here.

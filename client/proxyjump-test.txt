@@ -1,0 +1,2 @@
+Pending: configure client/config.example with actual addresses,
+usernames and key paths. Test with ssh -v lan-b and record output.

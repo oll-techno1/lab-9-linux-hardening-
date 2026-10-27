@@ -2,19 +2,20 @@
 
 ## Objectives
 - Capture before and after system snapshots.
-- Remove unnecessary services and packages.
-- Audit user accounts.
+- Identify unnecessary services, packages and accounts.
 - Harden SSH and validate its configuration.
 - Configure SSH ProxyJump through a router VM.
-- Enable and verify unattended security updates.
-- Verify network exposure using Nmap.
+- Enable unattended security updates.
+- Verify exposed ports and SSH authentication.
 
 ## Environment
-- Ubuntu Server
-- Router with LAN interfaces 10.10.10.1/24 and 10.10.20.1/24
-- OpenSSH server on TCP port 22
+- Hostname observed: server
+- SSH: OpenSSH, TCP port 22
+- Interface addresses observed: 10.0.2.15,
+  10.10.10.1, 10.10.20.1, 192.168.56.102
+
+The role of this host and the target VM address must be confirmed.
+Results must reflect actual command output.
 
 ## Evidence
-See the router/, normal-vm/, client/, report/, and evidence/ directories.
-
-Only mark tests as successful when their results have been verified.
+See router/, normal-vm/, client/, report/, and evidence/.

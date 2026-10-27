@@ -1,0 +1,10 @@
+Host router
+    HostName <ROUTER_REACHABLE_IP>
+    User <ROUTER_USERNAME>
+    IdentityFile ~/.ssh/id_ed25519
+
+Host lan-b
+    HostName <TARGET_LAN_IP>
+    User <TARGET_USERNAME>
+    IdentityFile ~/.ssh/id_ed25519
+    ProxyJump router
