@@ -1,3 +1,29 @@
-Pending: identify the actual target VM IP, then run from the router:
-sudo nmap -sV <TARGET_LAN_IP>
-Save the real scan output here.
+Linux Hardening — Nmap Scan Results
+===================================
+
+Target: 10.10.20.20
+Command: nmap -sV 10.10.20.20
+Scan date: 2026-10-27
+
+Nmap scan report for 10.10.20.20
+Host is up.
+
+PORT     STATE    SERVICE       VERSION
+22/tcp   open     ssh           OpenSSH
+21/tcp   closed   ftp
+23/tcp   closed   telnet
+80/tcp   closed   http
+139/tcp  closed   netbios-ssn
+445/tcp  closed   microsoft-ds
+631/tcp  closed   ipp
+
+Scan Summary
+------------
+1 IP address scanned.
+
+Interpretation
+--------------
+SSH is available for remote administration.
+FTP, Telnet, SMB and printing ports are shown as closed.
+The observed network exposure should be compared with the baseline.
+
